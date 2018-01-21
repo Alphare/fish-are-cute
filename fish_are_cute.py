@@ -7,7 +7,7 @@ from pygame import camera, image
 
 cam = None
 
-OUT_FOLDER = Path("fish_pictures")
+OUT_FOLDER = Path("pictures")
 FILE_EXTENSION = "jpg"
 
 def setup():
