@@ -7,9 +7,12 @@ from pygame import camera, image
 
 cam = None
 
+OUT_FOLDER = Path("fish_pictures")
+FILE_EXTENSION = "jpg"
+
 def setup():
     print("Creating the fish_pictures folder")
-    Path.mkdir(mode=0o777, parents=False, exist_ok=True)
+    OUT_FOLDER.mkdir(mode=0o777, parents=False, exist_ok=True)
     print("Initializing camera module")
     camera.init()
 
@@ -31,9 +34,10 @@ def take_picture():
     for _ in range(5):  # Dirty hack to make sure that we get the last image
         img = cam.get_image()
     filename = str(datetime.datetime.now())[:-7].replace(' ', '_')
-    image.save(img, 'fish_pictures/{}.jpg'.format(filename))
+    full_filename = '{}.{}'.format(filename, FILE_EXTENSION)
+    image.save(img, str(OUT_FOLDER / full_filename))
 
-    print('File {}.jpg saved'.format(filename))
+    print('File {} saved'.format(full_filename))
 
 def start_timelapse(interval=5):
     while True:
