@@ -20,7 +20,7 @@ def setup():
     all_cams = camera.list_cameras()
 
     if not all_cams:
-        raise Exception("No cameras found")
+        raise SystemError("No cameras found")
 
     global cam
     cam = camera.Camera(all_cams[0], (640, 480))
@@ -50,6 +50,7 @@ if __name__ == '__main__':
             setup()
         except SystemError as e:
             print(e)
-            print('Retrying')
-            pass
+            print('Retrying in a second')
+            time.sleep(1)
+
     start_timelapse()
