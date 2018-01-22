@@ -8,9 +8,10 @@ I'm suspecting that my water pump is not powerful enough to get enough oxygen in
 
 Either use the old-style requirements.txt or:
 
-Install Pyenv using Pyenv-installer
-Install Python 3.6.4: `pyenv install 3.6.4`
-`cd <BASE_DIR>`
-Install Pipenv using the Python you just installed (using the .python-version file): `pip install pipenv`
-Run `pipenv install`
+- Install Pyenv using Pyenv-installer
+- Install Python 3.6.4: `pyenv install 3.6.4`
+- `cd <BASE_DIR>`
+- Install Pipenv using the Python you just installed (using the .python-version file): `pip install pipenv`
+- Run `pipenv install`
+
 Enjoy.
