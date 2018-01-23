@@ -6,12 +6,10 @@ app = Flask(__name__)
 
 @app.route('/last-image')
 def get_image():
-    all_pictures = Path('pictures').glob("*.jpg")
-    picture = None
-    for _ in sorted(all_pictures):
-        picture = _
-    if not picture:
+    all_pictures = sorted(Path('pictures').glob("*.jpg"))
+    if not all_pictures:
         abort(404)
+    picture = all_pictures[-1]
     return send_file(str(picture), mimetype="image/jpg", cache_timeout=-1)
 
 @app.route('/')
