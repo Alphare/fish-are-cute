@@ -7,8 +7,10 @@ name = "pypi"
 
 [packages]
 
-pygame = "*"
+Pygame = "*"
+Flask = "*"
 
 
 [dev-packages]
 
+opencv-contrib-python = "*"
