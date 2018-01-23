@@ -8,7 +8,7 @@ app = Flask(__name__)
 def get_image():
     all_pictures = Path('pictures').glob("*.jpg")
     picture = None
-    for _ in all_pictures:
+    for _ in sorted(all_pictures):
         picture = _
     if not picture:
         abort(404)
